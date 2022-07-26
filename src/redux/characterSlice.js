@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getCharacters = createAsyncThunk('characters/getCharacters', async ({ offset }) => {
-  // const response = await axios.get(`${process.env.REACT_APP_BASE}/characters?limit=10`);
   const response = await axios.get(`https://www.breakingbadapi.com/api/characters?limit=20&offset=${offset}`);
   return response.data;
 });
